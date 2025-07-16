@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card mb-4">
+    <div class="card-header">
+        <h2>{{ match['home_team'] }} vs {{ match['away_team'] }}</h2>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <p><strong>Дата:</strong> {{ match['match_date'] }}</p>
+                <p><strong>Лига:</strong> {{ match['league'] }}</p>
+                {% if match['temperature'] %}
+                <p><strong>Погода:</strong> {{ match['conditions'] }}, {{ match['temperature'] }}°C</p>
+                {% endif %}
+            </div>
+            <div class="col-md-6">
+                {% if match['home_win_prob'] %}
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" style="width: {{ match['home_win_prob']*100 }}%">
+                        {{ "%.1f%%"|format(match['home_win_prob']*100) }}
+                    </div>
+                </div>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-warning text-dark" style="width: {{ match['draw_prob']*100 }}%">
+                        {{ "%.1f%%"|format(match['draw_prob']*100) }}
+                    </div>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar bg-danger" style="width: {{ match['away_win_prob']*100 }}%">
+                        {{ "%.1f%%"|format(match['away_win_prob']*100) }}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<a href="/" class="btn btn-primary">Назад</a>
+{% endblock %}

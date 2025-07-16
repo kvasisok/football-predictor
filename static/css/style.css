@@ -1,0 +1,13 @@
+body {
+    background-color: #f8f9fa;
+}
+.progress {
+    height: 30px;
+    margin-bottom: 10px;
+}
+.progress-bar {
+    font-weight: bold;
+}
+.table {
+    margin-top: 20px;
+}

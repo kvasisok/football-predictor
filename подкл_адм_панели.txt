@@ -1,0 +1,6 @@
+from auth import init_auth
+from admin import init_admin
+
+# После создания app = Flask(__name__)
+init_auth(app)  # Раскомментировать для включения
+init_admin(app)  # Раскомментировать для включения
