@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "build": "npm install",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "npm install"
   },
   "dependencies": {
     "express": "^4.18.2"
   },
   "engines": {
-    "node": "18.x"  # Явно указываем версию как в Vercel
+    "node": ">=18.x"
   }
 }

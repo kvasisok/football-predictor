@@ -1,5 +1,0 @@
-API Key: 005b8a3887ac4870920d909a7e31c7c5  
-Базовый URL: http://api.weatherapi.com/v1  
-Тип запроса: GET  
-Пример запроса:  
-http://api.weatherapi.com/v1/current.json?key=005b8a3887ac4870920d909a7e31c7c5&q=Москва  

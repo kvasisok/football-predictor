@@ -1,9 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Football Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        header {
+            background: #0056b3;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .status {
+            padding: 15px;
+            background: #f4f4f4;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Football Predictor Works!</h1>
+    <header>
+        <h1>⚽ Football Predictor</h1>
+    </header>
+    
+    <div class="status">
+        <p>Статус сервера: <span id="server-status">Проверка...</span></p>
+    </div>
+
+    <script>
+        // Проверка соединения с API
+        fetch('/api/status')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('server-status').textContent = 'Работает ✅';
+                document.getElementById('server-status').style.color = 'green';
+            })
+            .catch(error => {
+                document.getElementById('server-status').textContent = 'Ошибка ❌';
+                document.getElementById('server-status').style.color = 'red';
+            });
+    </script>
 </body>
 </html>
